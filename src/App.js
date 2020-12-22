@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './TodoList'
+import Main from './Main'
 import { v4 as uuidv4 } from 'uuid';
 const Local_Storage_KEY = 'todoApp.todos'
 export default function App() {
@@ -25,7 +26,6 @@ export default function App() {
             setTodos(storedTodos)
 
     }, [])
-
     useEffect(() => {
         localStorage.setItem(Local_Storage_KEY, JSON.stringify(todos))
     }, [todos])
@@ -40,18 +40,19 @@ export default function App() {
         const newTodo = todos.filter(todo => !todo.completed)
         setTodos(newTodo)
     }
+
+    const numberOfTodo = todos.filter(todo => !todo.completed).length
+
     return (
         <>
-            <TodoList todos={todos}
-                toggleTodo={toggleTodo} />
-            <input ref={todoNameRef}
-                type="text" />
+            <Main />
+            <input ref={todoNameRef} type="text" />
             <button onClick={AddTodo}>Add Todo</button>
+            <br />
+            <br />
+            <TodoList todos={todos} toggleTodo={toggleTodo} />
             <button onClick={RemoveComplitedTodo}>Clear Completed</button>
-            <div>{
-                todos.filter(todo => !todo.completed).length
-            }
-                left to do</div>
+            <h3>You have {numberOfTodo} this remining to do </h3>
         </>
     )
 }
