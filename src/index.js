@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, Switch, BrowserRouter as Router} from 'react-router-dom'
+import {Route, Switch, HashRouter as Router} from 'react-router-dom'
 import App from './App';
 
-
+//BrowserRouter
 // import reportWebVitals from './reportWebVitals';
 const routing = (
     <Router>
