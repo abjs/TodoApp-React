@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './TodoList'
 import Main from './Main'
+import NavBar from './NavBar';
 import { v4 as uuidv4 } from 'uuid';
 const Local_Storage_KEY = 'todoApp.todos'
 export default function App() {
@@ -45,6 +46,8 @@ export default function App() {
 
     return (
         <>
+     <NavBar />
+
             <Main />
             <input ref={todoNameRef} type="text" />
             <button onClick={AddTodo}>Add Todo</button>
