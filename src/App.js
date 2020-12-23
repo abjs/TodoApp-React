@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 const Local_Storage_KEY = 'todoApp.todos'
@@ -55,6 +56,7 @@ export default function App() {
     }
 
     const numberOfTodo = todos.filter(todo => !todo.completed).length
+    const variant='Dark'
 
     return (
         <>
@@ -72,16 +74,25 @@ export default function App() {
                     </Col>
 
                     <Col>
+			 <TodoList todos={todos}   toggleTodo={toggleTodo}/>
 
-                        <TodoList todos={todos}
-                            toggleTodo={toggleTodo}/>
+
+
+
                         <Button variant="secondary"
                             onClick={RemoveComplitedTodo}>Clear Completed</Button>
 
                     </Col>
                     <Col>
-                        <Card variant='Dark'>
-                            <Card.Header  className="d-flex justify-content-center">Status of TodoList</Card.Header>
+                        <Card
+
+   				bg={variant.toLowerCase()}
+    				//key={idx}
+    				text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+ 				//style={{ width: '18rem' }}
+				//className="mb-2"
+  				>
+                            <Card.Header  className="Dark d-flex justify-content-center">Status of TodoList</Card.Header>
                             <Card.Body>
                                 <Card.Title >
                                     <h1>You have {numberOfTodo} this remining to do </h1>
