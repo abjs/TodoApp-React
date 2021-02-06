@@ -89,7 +89,7 @@ export default function App() {
               //className="mb-2"
             >
               <Card.Header className="Dark d-flex justify-content-center">
-                Status of TodoList
+                <h1>Status of TodoList</h1>
               </Card.Header>
               <Card.Body>
                 <Card.Title>
