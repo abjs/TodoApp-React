@@ -1,4 +1,4 @@
-name: Elakka
+name: Todo App
 
 on:
   push:
@@ -20,6 +20,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Node Install     
       run : yarn install
+    - name: Node Install     
+      run : yarn run build 
+    
 
 
     
