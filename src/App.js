@@ -93,7 +93,7 @@ export default function App() {
               </Card.Header>
               <Card.Body>
                 <Card.Title>
-                  <h1>You have {numberOfTodo} this remining to do </h1>
+                  <h1>You have {numberOfTodo} task to do </h1>
                 </Card.Title>
               </Card.Body>
             </Card>
