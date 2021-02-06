@@ -1,34 +1,34 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-export default function Todo({ todo, toggleTodo }) {
-    const handleTodoCompleted = () => {
-        toggleTodo(todo.id)
-    }
-    return (
-        <div>
+import React from "react";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
+export default function Todo({ todo,num, toggleTodo }) {
+  const handleTodoCompleted = () => {
+    toggleTodo(todo.id);
+  };
+  return (
+    <div>
+      <Card style={{ width: "18rem" }}>
+        <label>
+          <h1>
+            <Card.Header>Task {todo.number} </Card.Header>
+          </h1>
 
-                
-<Card style={{ width: '18rem' }}>
-            <label>
-                                <Card.Header>Featured</Card.Header>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              <h2>
+                {todo.name + "      "}
 
-              <h2>  {todo.name}
-
-                                <ListGroup variant="flush">
-                                <ListGroup.Item>
-
-    					 <input type="checkbox" checked={todo.completed} onChange={handleTodoCompleted} />
-
-                            toggleTodo={toggleTodo}/>                          </ListGroup.Item>
-            </label>
-                        </ListGroup>
-                        </Card>
-
-
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={handleTodoCompleted}
+                />
+                {"     "}
               </h2>
-
-
-        </div>
-    )
+            </ListGroup.Item>
+          </ListGroup>
+        </label>
+      </Card>
+    </div>
+  );
 }
