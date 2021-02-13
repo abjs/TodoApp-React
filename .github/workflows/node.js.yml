@@ -20,6 +20,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Node Install     
       run : yarn install
-    - name: Node Install     
+    - name: Node Build    
       run : yarn run build 
     
