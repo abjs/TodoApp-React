@@ -18,8 +18,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Node Install     
+    - name: Install Dependencies     
       run : yarn install
-    - name: Node Build    
+    - name: Build Web site
       run : yarn run build 
+    - name: Restrt Websit    
+      run : pm2 restart todo 
     
